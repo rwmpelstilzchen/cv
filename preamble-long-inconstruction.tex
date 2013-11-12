@@ -1,0 +1,93 @@
+\documentclass[a4paper]{article}
+%\usepackage[top=3.0cm,bottom=4.3cm,left=3.0cm,right=3.0cm]{geometry}
+\usepackage[left=6.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+
+\usepackage{longtable, tabu}
+
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{bidi}
+
+\newcommand{\insertbox}[1]{%
+  \llap{\smash{\parbox[t]{3cm}{#1}}}%
+}
+
+\usepackage{adjustbox}
+\renewcommand\insertbox[1]{%
+    \adjustbox{minipage=[t]{#1},cfbox=red,set height=0pt,set depth=0cm,lap=-\width-1cm}%
+}
+
+% Section of resume: one argument: Name of section
+%\newenvironment{ressec}[1]{\begin{tabular}{p{1.4in}p{4.2in}} {\bfseries\fontspec{Fontin} \textsc{#1}} & }{\end{tabular}}
+%\newenvironment{ressec}[1]{\begin{tabular}{p{1.4in}p{4.2in}} {\fontspec[Color=203040FF]{Fontin SmallCaps} \textsc{#1}} & }{\end{tabular}}
+\newenvironment{ressec}[1]{\insertbox{3.5cm}{\fontspec[Color=203040FF]{Fontin SmallCaps} \textsc{#1}}}{}
+
+% Itemize environment for resume. Better layout
+\newenvironment{resitemize}{\setlength\parindent{-20pt}\begin{tabular}[t]{p{-0.0in}p{5.3in}}}{\end{tabular}\setlength\parindent{0pt}}
+% Itemize item for resume
+\newcommand{\resitem}{$\sbullet$ & }
+
+\usepackage{ruby}
+\renewcommand{\rubysize}{0.64}
+\renewcommand{\rubysep}{0.10ex} 
+
+
+\newenvironment{resdescription}
+%	{\begin{tabular}[t]{p{2in}p{5.3in}}}
+%	{\begin{tabular}[t]{p{1.1in}p{3in}}}
+%	{\end{tabular}}
+	%{\setlength\parindent{-20pt}}
+	{\setlength\parindent{-20pt}}
+	{\setlength\parindent{0pt}}
+\newcommand{\resdescitem}[2]{{#1}\hspace{10pt}#2
+
+}
+
+% Job item under, say, an 'experience' section. 2 args: job (to be aligned left) and date
+% in parenthesis and aligned right. All of it is bold.
+\newcommand{\resjob}[2]{\parbox{5.65in}{\vspace{0.05in}\textbf{\textsf{#1}} \hfill \textbf{\sf(#2)}\vspace{0.05in}}}
+
+% description of job, under a job item. the argument is the text you want
+\newcommand{\resjobinfo}[1]{\parbox{5.65in}{#1}}
+
+% Small bullet, for use in text mode. Nicer than full sized bullet, in my opinion
+\newcommand{\sbullet}{\,\begin{picture}(1,1)(0,-3)\circle*{3}\end{picture}\ }
+
+
+
+
+\newcommand{\Hebrew}[1]{\RL{\fontspec[Language=Hebrew, Script=Hebrew]{SBL Hebrew}#1}}
+
+%\hyphenpenalty=5000
+\tolerance=99999
+
+\usepackage{marginnote, graphicx}
+
+\setlength\parskip{\bigskipamount}
+\setlength\parindent{0pt}
+%\renewcommand{\footnoterule}{\vskip0.3cm}
+
+\IfFileExists{url.sty}{\usepackage{url}}
+{\newcommand{\url}{\texttt}}
+
+%\setromanfont{Palatino}
+\setromanfont{Optima LT Std}
+\setmonofont{LMTypewriter10 Regular}
+
+%\newfontfamily\HebrewFont[Script=Arabic,HyphenChar={-}]{Bitstream Cyberbit}
+
+%\renewcommand{\L}[1]{{\LR{\rmfamily\nonfrenchspacing{}#1}}}
+%\newcommand{\R}[1]{{\RL{\HebrewFont\frenchspacing{}#1}}}
+
+\newcommand{\ndash}{\LAT{–}}
+\newcommand{\mdash}{\LAT{—}}
+%\newcommand{\br}{\linebreak[4]}
+
+\renewcommand{\baselinestretch}{1.1}
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+\newcommand{\markout}[1]{\underline{#1}}
+
+\renewcommand{\emph}[1]{\textbf{#1}}
+%\renewcommand{\emph}[1]{{\addfontfeatures{FakeBold=2}#1}}
