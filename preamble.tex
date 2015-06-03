@@ -1,81 +1,38 @@
-\documentclass[a4paper]{article}
-%\usepackage[top=3.0cm,bottom=4.3cm,left=3.0cm,right=3.0cm]{geometry}
-\usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\documentclass[11pt,a4paper]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\usepackage[unicode]{hyperref}
+
+% moderncv themes
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\renewcommand*{\maketitlesymbol}{\qquad}
+\moderncvcolor{purple}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+%\usepackage[scale=0.75]{geometry}
+\usepackage{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% Wait for Biblatex 2; http://tex.stackexchange.com/questions/55256
+%\DeclareSortingScheme{noneyear}{
+% \sort{\citeorder}
+% \sort{\field{year}}
+%}
+
+\usepackage[backend=biber, style=authoryear, eventdate=comp, sorting=none]{biblatex}
+\bibliography{publications}
+\renewcommand{\mkbibnamelast}[1]{\textsc{#1}}
+\renewcommand{\subtitlepunct}{:\ }
+
 
 \usepackage{fontspec}
 \usepackage{xltxtra}
 \usepackage{bidi}
+\setmainfont{Vesper Pro}
+%\setmainfont{Gentium Book Basic}
+\setmonofont[Scale=0.9]{PragmataPro}
 
-% Section of resume: one argument: Name of section
-%\newenvironment{ressec}[1]{\begin{tabular}{p{1.4in}p{4.2in}} {\bfseries\fontspec{Fontin} \textsc{#1}} & }{\end{tabular}}
-\newenvironment{ressec}[1]{\begin{tabular}{p{1.4in}p{4.2in}} {\fontspec[Color=203040FF]{Fontin SmallCaps} \textsc{#1}} & }{\end{tabular}}
-
-% Itemize environment for resume. Better layout
-\newenvironment{resitemize}{\setlength\parindent{-20pt}\begin{tabular}[t]{p{-0.0in}p{5.3in}}}{\end{tabular}\setlength\parindent{0pt}}
-% Itemize item for resume
-\newcommand{\resitem}{$\sbullet$ & }
-
-\usepackage{ruby}
-\renewcommand{\rubysize}{0.64}
-\renewcommand{\rubysep}{0.10ex} 
-
-
-\newenvironment{resdescription}
-%	{\begin{tabular}[t]{p{2in}p{5.3in}}}
-%	{\begin{tabular}[t]{p{1.1in}p{3in}}}
-%	{\end{tabular}}
-	{\setlength\parindent{-20pt}}
-	{\setlength\parindent{0pt}}
-\newcommand{\resdescitem}[2]{{#1}\hspace{10pt}#2
-
-}
-
-% Job item under, say, an 'experience' section. 2 args: job (to be aligned left) and date
-% in parenthesis and aligned right. All of it is bold.
-\newcommand{\resjob}[2]{\parbox{5.65in}{\vspace{0.05in}\textbf{\textsf{#1}} \hfill \textbf{\sf(#2)}\vspace{0.05in}}}
-
-% description of job, under a job item. the argument is the text you want
-\newcommand{\resjobinfo}[1]{\parbox{5.65in}{#1}}
-
-% Small bullet, for use in text mode. Nicer than full sized bullet, in my opinion
-\newcommand{\sbullet}{\,\begin{picture}(1,1)(0,-3)\circle*{3}\end{picture}\ }
-
-
-
-
-\newcommand{\Hebrew}[1]{\RL{\fontspec[Language=Hebrew, Script=Hebrew]{SBL Hebrew}#1}}
-
-%\hyphenpenalty=5000
-\tolerance=99999
-
-\usepackage{marginnote, graphicx}
-
-\setlength\parskip{\bigskipamount}
-\setlength\parindent{0pt}
-%\renewcommand{\footnoterule}{\vskip0.3cm}
-
-\IfFileExists{url.sty}{\usepackage{url}}
-{\newcommand{\url}{\texttt}}
-
-%\setromanfont{Palatino}
-\setromanfont{Optima LT Std}
-\setmonofont{LMTypewriter10 Regular}
-
-%\newfontfamily\HebrewFont[Script=Arabic,HyphenChar={-}]{Bitstream Cyberbit}
-
-%\renewcommand{\L}[1]{{\LR{\rmfamily\nonfrenchspacing{}#1}}}
-%\newcommand{\R}[1]{{\RL{\HebrewFont\frenchspacing{}#1}}}
-
-\newcommand{\ndash}{\LAT{–}}
-\newcommand{\mdash}{\LAT{—}}
-%\newcommand{\br}{\linebreak[4]}
-
-\renewcommand{\baselinestretch}{1.1}
-\long\def\symbolfootnote[#1]#2{\begingroup%
-\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
-
-\newcommand{\markout}[1]{\underline{#1}}
-
-\renewcommand{\emph}[1]{\textbf{#1}}
-%\renewcommand{\emph}[1]{{\addfontfeatures{FakeBold=2}#1}}
-%\renewcommand{\emph}[1]{{\addfontfeatures{FakeBold=2}#1}}
+\newcommand{\Hebrew}[1]{\bgroup\fontspec[Script=Hebrew, ItalicFont={Days-Nights}, ItalicFeatures={Scale=0.95}]{Rutz_OE} \RL{#1}\egroup}
+\newcommand{\BiblicalHebrew}[1]{\bgroup\fontspec[Script=Hebrew]{SBL Hebrew} \RL{#1}\egroup}
+\newcommand{\texfont}{\fontspec{Palatino Linotype}}
