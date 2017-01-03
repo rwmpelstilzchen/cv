@@ -1,19 +1,28 @@
 \documentclass[11pt,a4paper]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
+\tolerance=99999
+
 \usepackage[unicode]{hyperref}
 
 % moderncv themes
 \moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\renewcommand*{\maketitlesymbol}{\qquad}
+\renewcommand*{\makeheaddetailssymbol}{\qquad}
 \moderncvcolor{purple}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 \renewcommand*{\namefont}{\Huge\mdseries\upshape}
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 %\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
-\patchcmd{\maketitle}
-  {\setlength{\maketitlewidth}{0.8\textwidth}}
-  {\setlength{\maketitlewidth}{0.7\textwidth}}
+\patchcmd{\makehead}
+  {\setlength{\makeheaddetailswidth}{0.8\textwidth}}
+  {\setlength{\makeheaddetailswidth}{0.7\textwidth}}
   {}
   {}
+\makeatletter
+\patchcmd{\makehead}{%search
+  \flushmakeheaddetails\@firstmakeheaddetailselementtrue\\\null}{%replace
+  \flushmakeheaddetails\@firstmakeheaddetailselementtrue\par\vspace{-0.9\baselineskip}\null}{%success
+  }{%failure
+  }
+\makeatother
 
 %\usepackage[scale=0.75]{geometry}
 \usepackage{geometry}
@@ -33,7 +42,7 @@
 
 
 \usepackage{fontspec}
-\usepackage{xltxtra}
+%\usepackage{xltxtra}
 \usepackage{bidi}
 \setmainfont{Vesper Pro}
 %\setmainfont{Gentium Book Basic}
