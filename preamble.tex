@@ -1,13 +1,21 @@
 \documentclass[11pt,a4paper]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-\tolerance=99999
+% \tolerance=99999
+\usepackage{microtype}
 
 \usepackage[unicode]{hyperref}
 
 % moderncv themes
 \moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \renewcommand*{\makeheaddetailssymbol}{\qquad}
-\moderncvcolor{purple}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+% \definecolor{turonBlue}{HTML}{004C7F}
+% \definecolor{darkscarlet}{rgb}{0.34, 0.01, 0.1}
+% \definecolor{Burgundy}{RGB}{144, 0, 32}
+% \definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{HTML}{004C7F}% light blue
+% \definecolor{color2}{rgb}{1.0, 0.01, 0.1}% dark grey
 \renewcommand*{\namefont}{\Huge\mdseries\upshape}
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 %\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
@@ -35,19 +43,79 @@
 % \sort{\field{year}}
 %}
 
+\usepackage{marginnote,needspace}
+
+\makeatletter
+\renewcommand\sectionfont{\color{color1}\large}
+\renewcommand*{\sectionstyle}[1]{{%
+	\needspace{1\baselineskip}%
+	% \reversemarginpar\marginnote{\fontspec{Symbola}⋄}\normalmarginpar%
+	\hspace{-0.5em}%
+	{\sectionfont\MakeLowercase{\textsc{#1}}}}}
+\renewcommand*{\section}[1]{%
+  \par\addvspace{3.5ex}%
+  \phantomsection{}% reset the anchor for hyperrefs
+  \addcontentsline{toc}{section}{#1}%
+  \sectionstyle{#1}%
+  \par\nobreak\addvspace{1.0ex}\@afterheading}
+
+\renewcommand\subsectionfont{\color{color1}}
+\renewcommand*{\subsectionstyle}[1]{{%
+	\parbox[t]{\textwidth}{\subsectionfont\textit{#1}}}}
+\renewcommand*{\subsection}[1]{%
+  \addvspace{1.5ex}%
+  \phantomsection{}% reset the anchor for hyperrefs
+  \addcontentsline{toc}{subsection}{#1}%
+  \subsectionstyle{#1}%
+  \par\nobreak\addvspace{2.0ex}\@afterheading}
+\makeatother
+
+
 \usepackage[backend=biber, style=authoryear, eventdate=comp, sorting=none]{biblatex}
 \bibliography{publications}
-\renewcommand{\mkbibnamelast}[1]{\textsc{#1}}
+\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
 \renewcommand{\subtitlepunct}{:\ }
 
 
+\usepackage[silent]{fontspec}
+\usepackage[silent,nil,bidi=basic]{babel}
+
+\babelprovide[import=en-GB,main]{english}
+\babelprovide[import=cy]{welsh}
+\babelprovide[import=he]{hebrew}
+
+% \WarningFilter{fontspec}{is using the default features for language}
+
+\babelfont[hebrew]{rm}[Script=Hebrew, ItalicFont={Days-Nights}, ItalicFeatures={Scale=0.95}]{RacRaze}
+
 \usepackage{fontspec}
 %\usepackage{xltxtra}
-\usepackage{bidi}
-\setmainfont{Vesper Pro}
+% \usepackage{bidi}
+% \babelfont{rm}[
+		% ItalicFont = {Gentium Plus Italic},
+		% BoldFont       = {Gentium Basic Bold},
+		% BoldFeatures   = {%
+			% SmallCapsFont=JuniusX,
+			% SmallCapsFeatures={Letters=SmallCaps},
+			% SmallCapsFeatures={FakeBold=2},
+		% },
+		% BoldItalicFont = {Gentium Basic Bold Italic},
+		% BoldItalicFeatures   = {%
+			% SmallCapsFont=JuniusX,
+			% SmallCapsFeatures={Letters=SmallCaps},
+			% SmallCapsFeatures={FakeBold=2},
+		% },
+	% ]{Gentium Plus}
+\setmainfont{Gentium Plus}
 %\setmainfont{Gentium Book Basic}
 \setmonofont[Scale=0.9]{PragmataPro}
 
-\newcommand{\Hebrew}[1]{\bgroup\fontspec[Script=Hebrew, ItalicFont={Days-Nights}, ItalicFeatures={Scale=0.95}]{Rutz_OE} \RL{#1}\egroup}
-\newcommand{\BiblicalHebrew}[1]{\bgroup\fontspec[Script=Hebrew]{SBL Hebrew} \RL{#1}\egroup}
+% \newcommand{\Hebrew}[1]{\bgroup\fontspec[Script=Hebrew, ItalicFont={Days-Nights}, ItalicFeatures={Scale=0.95}]{Rutz_OE} \RL{#1}\egroup}
+% \newcommand{\BiblicalHebrew}[1]{\bgroup\fontspec[Script=Hebrew]{SBL Hebrew} \RL{#1}\egroup}
+\newcommand{\BiblicalHebrew}[1]{\bgroup\fontspec[Script=Hebrew, Renderer=Harfbuzz]{SBL Hebrew}\textdir TRT #1\egroup}
+\newcommand{\Hebrew}[1]{\BiblicalHebrew{#1}}
 \newcommand{\texfont}{\fontspec{Palatino Linotype}}
+
+\usepackage[super]{nth}
+
+\newcommand{\foreign}[1]{\emph{#1}}

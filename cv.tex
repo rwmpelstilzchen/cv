@@ -1,7 +1,9 @@
+%! TEX program = lualatex
+
 \input{preamble}
 \input{title}
 
-\newcommand{\cvdate}{\the\year·\the\month·\the\day}
+\newcommand{\cvdate}{\the\year-\the\month-\the\day}
 \fancyfoot[l]{\color{color2}[\cvdate]}
 
 \begin{document}
@@ -9,36 +11,69 @@
 \makecvtitle
 
 \section{Education}
-\cventry{2016–}{Ph.D.\ in Linguistics}{Hebrew University}{Jerusalem}{}{}
-\cventry{2008–2015}{M.A.\ in Linguistics, magna cum laude}{Hebrew University}{Jerusalem}{}{}
-\cventry{2004–2007}{B.A.\ in Linguistics and B.Sc.\ in Computer Science}{Hebrew University}{Jerusalem}{}{}
-\cventry{2009}{Ysgol Haf Dysgu Cymraeg (Welsh language summer school)}{Coleg Meirion-Dwyfor}{Pwllheli}{}{}
+
+\subsection{Academic}
+
+\cventry{2023}
+{Hebrew University of Jerusalem}{Ph.D.\ in linguistics}{Jerusalem}{}{}%{2016–}
+\cventry{2015}
+{Hebrew University of Jerusalem}{M.A.\ in Linguistics, \foreign{magna cum laude}}{Jerusalem}{}{}%{2008–2015}
+\cventry{2007}
+{Hebrew University of Jerusalem}{B.A.\ in Linguistics and B.Sc.\ in Computer Science}{Jerusalem}{}{}%{2004–2007}
 
 
 
-\subsection{PhD thesis}
-\cvitem{Title}{\emph{Grammar of Textuality:} Structural Linguistic Analysis of Text Typology in Modern Welsh (provisional).}
-\cvitem{Advisors}{Erich \textsc{Poppe} (Philipps-Universität Marburg) and Lea \textsc{Sawicki} (Hebrew University of Jerusalem).}
-\cvitem{Language}{English.}
+\subsection{Spoken Welsh courses}
+
+\cventry{2019}
+{Ysgol y Gymraeg, Prifysgol Caerdydd}{Cwrs dwys haf (intensive summer school)}{Caerdydd}{}{}
+\cventry{2009}
+{Coleg Meirion-Dwyfor}{Ysgol haf dysgu Cymraeg (Welsh language summer school)}{Pwllheli}{}{}
+
+% \vspace{1\normalbaselineskip}
 
 
-\subsection{Master thesis}
+
+\subsection{Ph.D.\ thesis}
+
+\cvitem{Title}{\emph{Grammar and textuality: A structural linguistic study of text-types Modern Welsh}}
+\cvitem{Advisors}{%
+	Prof.\ Erich \textsc{Poppe} (Philipps-Universität Marburg) and
+	Dr.\ Lea \textsc{Sawicki} (Hebrew University of Jerusalem)
+}
+% \cvitem{Abstract}{A structural text-linguistic inquiry of Modern Welsh, describing the linguistic properties of sub-textual constituents (\emph{textemes}) and their interrelations. The main corpus consists of the textually diverse writings of Kate Roberts.}
+\cvitem{Abstract}{A linguistic study of the means of text construction and organisation in Literary Modern Welsh, focussing on three textual components: anecdotes in autobiographical texts, reporting of speech in short stories, and stage directions in plays. The main corpus consists of the textually diverse writings of Kate Roberts.}
+\cvitem{Language}{English}
+
+
+
+% \vspace{1\normalbaselineskip}
+\subsection{Master’s thesis}
+
 \cvitem{Title}{\emph{%
 	%{se ðe ís soð wysdom~· {\fontspec{Junicode}⁊} sawla líf}
 	A textual-structural study of the demonstrative pronouns in Old English:
-	classification, characterization and description
-	of the examples in Ælfric’s \emph{Lives of Saints}.}}
-\cvitem{Advisor}{Nimrod \textsc{Barri} (Hebrew University of Jerusalem).}
+	Classification, characterisation and description
+	of the examples in Ælfric’s \emph{Lives of Saints}}}
+\cvitem{Advisor}{Dr.\ Nimrod \textsc{Barri} OBM (Hebrew University of Jerusalem)}
 \cvitem{Abstract}{
-Description of the syntactical structures in Old English, in which the demonstrative pronouns (\textit{se} and \textit{ðis}) occur independently of a following nominal phrase: structural classification, characterization and analysis of their internal structure and their function in the text by a comprehensive examination of the examples in the corpus, Ælfric’s \emph{Lives of Saints}.
+Description of the syntactical structures in Old English, in which the demonstrative pronouns (\textit{se} and \textit{ðis}) occur independently of a following nominal phrase: structural classification, characterisation and analysis of their internal structure and their function in the text by a comprehensive examination of the examples in the corpus, Ælfric’s \emph{Lives of Saints}.
 }
-\cvitem{Language}{Hebrew.}%, as required by the Hebrew University of Jerusalem for MA theses.}
-\cvitem{URL}{\url{https://digitalwords.net/mathesis} (PDF and \LaTeX\ source).}
+\cvitem{Language}{Hebrew}%, as required by the Hebrew University of Jerusalem for MA theses}
+\cvitem{URL}{https://digitalwords.net/media/mathesis/mathesis.pdf}
+%{\url{https://digitalwords.net/mathesis} (PDF and \LaTeX\ source)}
+
 
 \section{Academic interests}
-\cvlistdoubleitem{Text linguistics}{Linguistic analysis of translation}
-\cvlistdoubleitem{Linguistic analysis of narrative}{Welsh, Old English, Japanese and Coptic}
-\cvlistdoubleitem{General linguistics}{Classification systems}
+\cvlistdoubleitem
+	{Welsh and Old English}
+	{Micro- and macro-syntax}
+\cvlistdoubleitem
+	{Text linguistics}
+	{Linguistic analysis of translation}
+\cvlistdoubleitem
+	{Linguistic analysis of narrative}
+	{General linguistics}
 
 
 
@@ -46,50 +81,125 @@ Description of the syntactical structures in Old English, in which the demonstra
 
 \subsection{Talks}
 
+\cventry{2023}
+	{The author as a weaver:}
+	{\nth{17} International Congress of Celtic Studies}
+	{Utrecht}
+	{}
+	{\emph{The grammatical make-up of the interface between narrative and dialogue in Welsh}}
+
+\cventry{2019}
+	{Dyna fy mywyd:}
+	{\nth{16} International Congress of Celtic Studies}
+	{Bangor}
+	{}
+	{\emph{Text-linguistic analysis of autobiographical anecdotes}}
+
+\cventry{2018}
+	{Wyddoch-Chi-Pwy:}
+	{\nth{3} Poznań Conference of Celtic Studies}
+	{Poznań}
+	{}
+	{\emph{Harri Potter and the Sociopragmatics of Second Person}}
+
+\cventry{2018}
+	{Wyddoch-Chi-Pwy:}
+	{\nth{4} Usage-Based Linguistics Conference}
+	{Tel Aviv}
+	{}
+	{\emph{Harri Potter and the Sociopragmatics of Second Person}}
+
 \cventry{2015}
 	{llygaid [sydd] ganddynt, ac ni welant:}
-	{XV International Congress of Celtic Studies}
+	{\nth{15} International Congress of Celtic Studies}
 	{Glasgow}
 	{}
-	{\emph{Mediating Senses through Translation Choices}}
+	{\emph{Mediating senses through translation choices}}
 
 \cventry{2012}
-	{\fontspec{Gentium Book Basic}na{\fontspec{Gentium}ʿ}ăśɛ wə-nišmå{\fontspec{Gentium}ʿ}:}
+	{\fontspec{Gentium Plus}na{\fontspec{Gentium Plus}ʿ}ăśɛ wə-nišmå{\fontspec{Gentium Plus}ʿ}:}
 	{Studientag in the Honour of Ariel Shisha-Halevy}
 	{Jerusalem}
 	{}
-	{\emph{a Linguistic Study of a Translator’s Choices — the verb \emph{šm{\fontspec{Gentium}ʿ}} in the Welsh translation of the Pentateuch}. Presented in Hebrew (\Hebrew{\BiblicalHebrew{נַעֲשֶׂ֥ה וְנִשְׁמָֽע}: עיון בלשני בבחירותיו של מתרגם — הפועל „\BiblicalHebrew{שָׁמַע}” בתרגום התנ״ך הוולשי}) at a \emph{Studientag} in the honour of Ariel Shisha-Halevy, on the occasion of his retirement; the Hebrew University of Jerusalem, the Department of Linguistics. (Invited).}
+	{\emph{A linguistic study of a translator’s choices — the verb \emph{šm{\fontspec{Gentium Plus}ʿ}} in the Welsh translation of the Pentateuch} (presented in Hebrew; \Hebrew{\BiblicalHebrew{נַעֲשֶׂ֥ה וְנִשְׁמָֽע}: עיון בלשני בבחירותיו של מתרגם — הפועל „\BiblicalHebrew{שָׁמַע}” בתרגום התנ״ך הוולשי}); invited}
+	% at a \emph{Studientag} in the honour of Ariel Shisha-Halevy, on the occasion of his retirement; the Hebrew University of Jerusalem, the Department of Linguistics.
 
 \cventry{2011}
 	{Ni a wnawn, ac a wrandawn:}
-	{XIV International Congress of Celtic Studies}
+	{\nth{14} International Congress of Celtic Studies}
 	{Maynooth}
 	{}
-	{\emph{William Morgan’s Choices in His 1588 Welsh Translation of the Pentateuch — the case of the Hebrew verb \emph{šm{\fontspec{Gentium}ʿ}}} (“hear”).}
+	{\emph{William Morgan’s choices in his 1588 Welsh translation of the Pentateuch — the case of the Hebrew verb \emph{šm{\fontspec{Gentium Plus}ʿ}} (‘hear’)}}
 
 \cventry{2009}
 	{Between Narrative and Dialogue:}
 	{Cynhadledd Ryngwladol Edward Lhuyd}
 	{Aberystwyth}
 	{}
-	{\emph{Syntactical Features of Signalling Speech within Narrative in Modern Welsh.}}
+	{\emph{Syntactical features of signalling speech within narrative in Modern Welsh}}
 
+	
 
 \subsection{Posters}
+
+\cventry{2019}
+	{A typological study of lateral fricatives}
+	{Phonology and Phonetics Afternoon}
+	{Jerusalem}
+	{}
+	{}
 
 \cventry{2018}
 	{The demonstrative pronouns in Old English:}
 	%{The Sixth International Conference for Graduate Students on Diverse Approaches to Linguistics}
-	{IGDAL6}
+	{\parbox[t]{0.8\textwidth}{\nth{6} International Conference for Graduate\\students on Diverse Approaches to Linguistics (IGDAL)}}
 	{Haifa}
 	{}
 	{\emph{A textual-structural analysis}}
 
 
 
+\section{Teaching}
+
+See under \emph{Employment} below.
+
+
+
+\section{Conference organisation}
+
+\cventry{2019}
+	{Member of the organising committee}
+	{\parbox[t]{0.8\textwidth}{\nth{7} International Conference for Graduate\\students on Diverse Approaches to Linguistics (IGDAL)}}
+	{Jerusalem}
+	{}
+	{}
+
+
+
+\subsection{Chairing}
+
+\cventry{2023}
+	{Middle and Modern Welsh morphology and pragmatics session}
+	{\parbox[t]{0.8\textwidth}{\nth{17} International Congress of Celtic Studies}}
+	{Utrecht}
+	{}
+	{}
+
+\cventry{2019}
+	{Noon session}
+	{\parbox[t]{0.8\textwidth}{\nth{7} International Conference for Graduate\\students on Diverse Approaches to Linguistics (IGDAL)}}
+	{Jerusalem}
+	{}
+	{}
+
 \section{Research projects}
 
-\cventry{2008–2010}{Šenoute’s Rhetorical Syntax}{Hebrew University of Jerusalem / Israel Science Foundation}{Jerusalem}{}{Assistant to Ariel \textsc{Shisha-Halevy}.}
+\cventry{2008–2010}
+	{Šenoute’s Rhetorical Syntax}
+	{Hebrew University of Jerusalem / Israel Science Foundation}
+	{Jerusalem}
+	{}
+	{Assistant to PI Prof. Ariel \textsc{Shisha-Halevy}}
 
 
 
@@ -100,70 +210,111 @@ Description of the syntactical structures in Old English, in which the demonstra
 	{Hebrew University of Jerusalem}
 	{Jerusalem}
 	{}
-	{Paper title: \emph{Between Narrative and Dialogue~— syntactical features of speech within narrative in Modern Welsh} (written in Hebrew); advisor: Ariel \textsc{Shisha-Halevy}.}
+	{Paper title: \emph{Between narrative and dialogue~— syntactical features of speech within narrative in Modern Welsh} (written in Hebrew); advisor: Prof. Ariel \textsc{Shisha-Halevy}}
 
 
 
-\section{Publications}
-
-\nocite{*}
-\printbibliography[keyword=edit-text, heading=subbibliography, title={Editing, collecting, digitising and typesetting texts}]
-\printbibliography[keyword=edit-music, heading=subbibliography, title={Editing, collecting, digitising and engraving music}]
-\printbibliography[keyword=language-instruction, heading=subbibliography, title={Language instruction}]
+%%% \section{Publications}
+%%% 
+%%% \nocite{*}
+%%% \printbibliography[keyword=edit-text, heading=subbibliography, title={Editing, collecting, digitising and typesetting texts}]
+%%% \printbibliography[keyword=edit-music, heading=subbibliography, title={Editing, collecting, digitising and engraving music}]
+%%% \printbibliography[keyword=language-instruction, heading=subbibliography, title={Language instruction}]
 
 
 
 \section{Employment}
 
-\cventry{2007–2010}
-	{Webmaster and web developer}
-	{Ofek School for Gifted Children}
+\cventry{2019–2021}
+	{Developing and teaching courses on the Welsh language}
+	{Hebrew University of Jerusalem}
 	{Jerusalem}
 	{}
-	{Developing, designing and maintaining a website, using MediaWiki, and school web applications (course selection and feedback), using PHP and MySQL.}
+	{\emph{Introduction to the structure of Modern Welsh} (\#41581) and \emph{Topics in Modern Welsh grammar} (\#41582)}
+
+\cventry{2014}
+	{Developing and teaching a course on Esperanto}
+	{Ofek School for the Gifted}
+	{Jerusalem}
+	{}
+	{}
+
+\cventry{2007–2010}
+	{Webmaster and web developer}
+	{Ofek School for the Gifted}
+	{Jerusalem}
+	{}
+	{Developing, designing and maintaining a website, using MediaWiki, and school web applications (course selection and feedback), using PHP and MySQL}
 
 \cventry{2007–2009}
 	{Typesetter}
 	{Journal d’Analyse Mathématique and Israel Journal of Mathematics}
 	{Jerusalem}
 	{}
-	{Typesetting and correcting proofread articles in mathematics, using \LaTeX .}
+	{Typesetting and correcting proofread articles in mathematics, using {\texfont\LaTeX}}
 
 
 
 \section{Language skills}
 
-\cvitem{Fluent}
-	{Hebrew (native), English}
-\cvitem{Reading knowledge}
-	{Modern and Middle Welsh, Old English, Esperanto, Japanese, Coptic (Sahidic and Bohairic dialects), Swedish}
-\cvitem{Basic knowledge {\normalfont\small (acadmic courses except *)}}
-	{Pre-Coptic Egyptian (Late, Middle and Old), Old Icelandic, *German, Irish, Greek, Latin, Gothic, Mongolian (Khalkha dialect), *Palestinian Arabic}
+\cvitem{Oral and written}
+	{Hebrew (native), English, Welsh, Norwegian, Esperanto}
+
+% \cvitem{Fluent}
+	% {Hebrew (native), English}
+% \cvitem{Main research languages}
+	% {Modern Welsh, Old English}
+% \cvitem{Talking and reading}
+	% {Norwegian, Esperanto}
+
+\cvitem{Written}
+	{Old English, Middle Welsh, Old Norse, Danish, Swedish}
+
+\cvitem{Basic knowledge}
+	{%
+		Egyptian (Coptic and Ancient),
+		Finnish*,
+		German*,
+		Gothic,
+		Greek,
+		Irish,
+		Japanese,
+		Latin,
+		Malayalam,
+		Mongolian (Khalkha dialect),
+		Palestinian Arabic*,
+		Tamil
+		{\normalfont\small (took academic courses, except the ones marked with an asterisk)}
+	}
 
 
 
-\section{Computer skills}
+\section{Technology skills}
 
-\cvdoubleitem
-	{Typesetting}{{\texfont\LaTeX}, LilyPond}
-	{Text editing}{Vim}
-\cvdoubleitem
-	{Programming languages}{Python, C/C++, Lua, PHP, Java}
-	{Operating systems}{(Arch, Gentoo) Linux, FreeBSD, Mac~OS~X}
-\cvdoubleitem
-	{Markup and style languages}{HTML, XML, CSS}
-	{Database systems}{SQLite, MariaDB/MySQL, Oracle DBMS}
-\cvdoubleitem
-	{Web publishing}{Pelican, Jekyll, MediaWiki, Wordpress}
-	{}{}
+% \renewcommand{\doubleitemcolumnwidth}{0.5\textwidth-1em}
+% \cvdoubleitem
+
+\cvline{Bibliography management}{Bib{\texfont\LaTeX}}
+\cvline{Database systems}{SQLite, MariaDB/MySQL} % TODO: change structure to something more general %, Oracle DBMS
+\cvline{Data interchange}{JSON, YAML}
+\cvline{Data visualisation}{\mbox{\textsc{pgf}/T\textit{ik}Z}, Inkscape}
+\cvline{Linguistics}{Praat, ELAN}
+\cvline{Markup and style languages}{HTML, XML (+TEI), CSS}
+\cvline{Operating systems}{Linux, FreeBSD, Mac~OS~X}
+\cvline{Programming languages}{Python, Lua, C/C++, PHP, Java}
+\cvline{Text editing}{NeoVim}
+\cvline{Typesetting}{{\texfont\LaTeX}, LilyPond}
+\cvline{Version control}{Git}
+\cvline{Web publishing}{Pelican, Jekyll, MediaWiki, Wordpress}
 
 
 
-\section{Music skills}
-
-\cvitem{Plucked string instruments}{Mandolin, guitar (Renaissance lute music), ukulele}
-\cvitem{Fipple flutes}{Irish whistle, ocarina, recorder}
-\cvitem{Keyboard}{Piano, melodica}
-\cvitem{Percussion}{Javanese gamelan instruments (member of the \href{https://www.facebook.com/jerusalem.gamelan/}{Jerusalem Gamelan})}
+%%% \section{Music skills}
+%%% 
+%%% \cvitem{Plucked string instruments}{Mandolin, guitar (Renaissance lute music), ukulele}
+%%% \cvitem{Fipple flutes}{Irish whistle, ocarina, recorder}
+	%%% TODO: flute
+%%% \cvitem{Keyboard}{Piano, melodica}
+%%% \cvitem{Percussion}{Javanese gamelan instruments (member of the \href{https://www.facebook.com/jerusalem.gamelan/}{Jerusalem Gamelan})}
 
 \end{document}

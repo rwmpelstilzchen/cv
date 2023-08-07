@@ -1,5 +1,5 @@
 all:
-	latexmk -xelatex -file-line-error cv
+	latexmk -lualatex -file-line-error cv
 
 pvc:
 	latexmk -silent -pvc -file-line-error cv
