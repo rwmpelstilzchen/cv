@@ -4,14 +4,33 @@
 \usepackage{microtype}
 
 \usepackage[unicode]{hyperref}
+% \usepackage[hyperindex=false]{hyperref}
+% \hypersetup{%
+    % linktocpage,
+    % bookmarksdepth = subparagraph,
+    % colorlinks = true,
+    % linkcolor = Burgundy,
+    % urlcolor = Burgundy,
+    % citecolor = Burgundy,
+    % linkcolor = darkscarlet,
+    % urlcolor = darkscarlet,
+    % citecolor = darkscarlet,
+    % pdfpagelayout=TwoPageLeft,
+% }
 
 % moderncv themes
 \moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \renewcommand*{\makeheaddetailssymbol}{\qquad}
 
+\usepackage{etoolbox,changepage}
+\patchcmd{\makehead}% <cmd>
+  {0.8\textwidth}% <search>
+  {0.8\linewidth}% <replace>
+  {}{}% <success><failure>
+
 \moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 % \definecolor{turonBlue}{HTML}{004C7F}
-% \definecolor{darkscarlet}{rgb}{0.34, 0.01, 0.1}
+\definecolor{darkscarlet}{rgb}{0.34, 0.01, 0.1}
 % \definecolor{Burgundy}{RGB}{144, 0, 32}
 % \definecolor{color0}{rgb}{0,0,0}% black
 \definecolor{color1}{HTML}{004C7F}% light blue
